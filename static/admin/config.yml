@@ -1,0 +1,72 @@
+backend:
+    name: github
+    repo: nozemaudio/nozem-website
+    branch: development
+
+media_folder: static/images
+public_folder: /images
+logo_url: /images/nozem-white-N.png
+
+collections:
+
+  - name: "project"
+    label: "Projects"
+    label_singular: "Project"
+    folder: "content/projects"
+    create: true
+    slug: "{{slug}}"
+    editor:
+        preview: false
+    fields:
+      - { label: "Type", name: "type", widget: "hidden", default: "project" }
+      - { label: "Background image", name: "backgroundImage", widget: "image" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Short title", name: "shortTitle", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "page"
+    label: "Pages"
+    label_singular: "Page"
+    folder: "content/pages"
+    create: false
+    identifier_field: page
+    editor:
+        preview: false
+    fields:
+      - { label: "Type", name: "type", widget: "hidden", default: "page" }
+      - { label: "Background image", name: "backgroundImage", widget: "image" }
+      - { label: "Page", name: "page", widget: "string" }
+      - { label: "Page subtitle", name: "seoSubtitle", widget: "string" }
+      - { label: "Page description", name: "seoDescription", widget: "string" }
+      - { label: "Additional keywords", name: "seoKeywords", widget: "list" }
+
+  - name: "highlights"
+    label: "Highlights"
+    folder: "content/highlights"
+    create: false
+    identifier_field: type
+    editor:
+        preview: false
+    fields:
+      - { label: "Type", name: "type", widget: "hidden", default: "settings" }
+      - { label: "Highlight #1", name: "highlight1", widget: "relation", collection: "project", valueField: "title", searchFields: ["title"] }
+      - { label: "Highlight #1 korte omschrijving", name: "highlight1Description", widget: "text" }
+      - { label: "Highlight #2", name: "highlight2", widget: "relation", collection: "project", valueField: "title", searchFields: ["title"] }
+      - { label: "Highlight #2 korte omschrijving", name: "highlight2Description", widget: "text" }
+      - { label: "Highlight #3", name: "highlight3", widget: "relation", collection: "project", valueField: "title", searchFields: ["title"] }
+      - { label: "Highlight #3 korte omschrijving", name: "highlight3Description", widget: "text" }
+
+  - name: "settings"
+    label: "Global settings"
+    folder: "content/settings"
+    create: false
+    identifier_field: seoTitle
+    editor:
+        preview: false
+    fields:
+      - { label: "Type", name: "type", widget: "hidden", default: "settings" }
+      - { label: "Site title", name: "seoTitle", widget: "string" }
+      - { label: "Delimiter", name: "delimiter", widget: "string" }
+      - { label: "Site description", name: "seoDescription", widget: "string" }
+      - { label: "Site keywords", name: "seoKeywords", widget: "list" }
