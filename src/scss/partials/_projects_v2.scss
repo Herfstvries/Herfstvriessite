@@ -1,0 +1,179 @@
+.projects-v2 {
+    @include no-gutters;
+    min-height: 30vh;
+    width: 100%;
+    background-color: $light-grey;
+    color: $white;
+
+    .fullscreen-projects {
+        flex-direction: row;
+
+        .row {
+            @include no-gutters;
+            width: 100%;
+
+            .your-project-here {
+                @include no-gutters;
+                height: 30rem;
+                position: relative;
+                overflow: hidden;
+                background-color: $brand-yellow;
+
+                &.col3 {
+                    width: 25%;
+                    @media only screen and (max-width: 1400px) {
+                        width: 50%;
+                    }
+                }
+
+                &.col2 {
+                    width: 50%;
+                    @media only screen and (max-width: 1400px) {
+                        display: none;
+                    }
+                }
+
+                &.col1 {
+                    width: 75%;
+                    @media only screen and (max-width: 1400px) {
+                        width: 50%;
+                    }
+                }
+
+                &.col0 {
+                    display: none;
+                }
+
+                @media only screen and (max-width: 800px) {
+                    display: none;
+                }
+
+                &__content {
+                    @include center;
+                    z-index: 3;
+                    transition: all 0.3s;
+                    opacity: 1;
+                    width: 100%;
+
+                    h3 {
+                        @include text-condensed;
+                        display: inline;
+                        font-weight: bold;
+                        color: $black;
+                    }
+
+                    p {
+                        color: $black;
+                        font-size: 2.2rem;
+                        padding: $small-margin;
+
+                        a {
+                            color: $black;
+                            font-weight: bold;
+                            transition: all 0.2s;
+
+                            &:hover {
+                                text-decoration: none;
+                                color: $black;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .project-card {
+                @include no-gutters;
+                height: 30rem;
+                width: 25%;
+                position: relative;
+                overflow: hidden;
+
+                @media only screen and (max-width: 1400px) {
+                    width: 50%;
+                }
+
+                @media only screen and (max-width: 800px) {
+                    width: 100%;
+                }
+
+                .project {
+                    @include full-absolute;
+                    @include no-gutters;
+                    box-shadow: 10px 10px 20px rgba($black, 0.2);
+                    z-index: 1;
+                    transition: all 0.3s;
+                    transform: scale(1.05);
+                }
+
+                &:hover .project {
+                    filter: blur(0.2rem);
+                    transform: scale(1.2);
+                }
+
+                .overlay {
+                    @include no-gutters;
+                    @include full-absolute;
+                    z-index: 2;
+                    background-color: #000;
+                    opacity: 0.6;
+                    transition: all 0.3s;
+                }
+
+                &:hover .overlay {
+                    opacity: 0.75;
+                }
+
+                .project-card__content {
+                    @include center;
+                    z-index: 3;
+                    transition: all 0.3s;
+                    opacity: 1;
+
+                    h3 {
+                        @include text-condensed;
+                        display: inline;
+                        font-weight: bold;
+                    }
+                }
+
+                &:hover .project-card__content {
+                    opacity: 0;
+                }
+
+                .project-card__hidden-content {
+                    @include center;
+                    @include no-gutters;
+                    opacity: 0;
+                    font-size: 2.2rem;
+                    color: $white;
+                    transition: all 0.3s;
+                    z-index: 3;
+
+                    h3 {
+                        @include text-condensed;
+                        display: block;
+                        padding-bottom: 2rem;
+                    }
+
+                    p {
+                        @include no-gutters;
+                    }
+                }
+
+                &:hover .project-card__hidden-content {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    h2 {
+        margin-bottom: $default-margin;
+        padding-top: $large-margin;
+        display: inline-block;
+        font-size: 3rem;
+        color: $white;
+        text-transform: uppercase;
+        border-bottom: 1px currentColor solid;
+    }
+}

@@ -1,0 +1,66 @@
+section.contact {
+    padding-bottom: $large-margin;
+    font-size: 2.2rem;
+    background-color: $white;
+    color: $black;
+
+    h2 {
+        @include text-condensed($color: $black);
+        margin-top: $large-margin;
+        margin-bottom: $medium-margin;
+        display: inline-block;
+        font-size: 3rem;
+    }
+
+    .container {
+        .form-group {
+            input, textarea {
+                font-size: 2.2rem;
+                color: $black;
+                border-radius: 5px 5px 0 0;
+                border: none;
+                outline: none;
+                background-color: $light-grey;
+                transition: all 0.5s ease;
+                padding: 0.5rem 1.5rem;
+
+                &::placeholder {
+                    color: #676767;
+                }
+            }
+
+            input {
+                padding: 2.5rem 1.8rem;
+            }
+
+            textarea {
+                height: 24.6rem;
+                resize: none;
+                padding: 0.9rem 1.8rem;
+            }
+        }
+
+        button.btn-primary {
+            @include text-condensed;
+            margin-top: $medium-margin;
+            border-radius: 0;
+            border: none;
+            color: $white;
+            font-weight: bold;
+            padding: 1rem 2rem;
+            font-size: 2.2rem;
+            background-color: $brand-purple;
+            transition: all 0.05s;
+
+            &:hover {
+                transform: translateY(-0.3rem);
+            }
+
+            &:active, &:focus {
+                transform: translateY(0.2rem);
+                background-color: #E94F37;
+                color: $black;
+            }
+        }
+    }
+}

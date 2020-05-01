@@ -1,0 +1,44 @@
+.small-hero {
+    height: 40vh;
+
+    .hero {
+        @include full;
+        overflow: hidden;
+        position: relative;
+
+        &__image {
+            @include full-absolute;
+            @include no-gutters;
+            z-index: 1;
+        }
+    
+        &__overlay {
+            @include full-absolute;
+            @include no-gutters;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+            z-index: 2;
+        }
+
+        .container {
+            @include full;
+            position: relative;
+            z-index: 3;
+
+            .hero__content{
+                @include center;
+                background: none;
+
+                h1 {
+                    width: 100%;
+                    @include text-condensed($font-size: 3.2rem);
+                    text-shadow: 5px 5px 10px rgba($white, 0.2);
+                    line-height: 1.5;
+                    padding: 0;
+                    display: inline;
+                    text-align: center;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

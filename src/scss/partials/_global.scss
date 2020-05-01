@@ -1,0 +1,39 @@
+// Provide a full reset to avoid any lingering margins and paddings.
+* {
+    @include no-gutters;
+}
+
+// This is required to make the footer stick to the bottom. It helps make the html and body elements be
+// at least the full height of the browser, thus sticking the footer to the bottom of the page.
+html {
+    min-height: 100vh;
+    font-size: 62.5%;
+    padding: inherit;
+    margin: inherit;
+    text-align: inherit;
+}
+
+body {
+    @include no-gutters;
+    font-family: $default-font;
+    color: $white;
+    min-height: 100vh;
+    font-size: 1.6rem;
+    font-weight: 300;
+    text-align: center;
+}
+
+// We need to set the position of the app element to relative. This way we can make the footer stick to
+// the bottom of the page. The min-height has to be 100vh: the full page.
+#___gatsby {
+    @include no-gutters;
+    // This makes sure the footer stays at the bottom, even if there's not enough content.
+    min-height: 100vh;
+    // This offsets the height of the footer.
+    // This allows us to set the footer position to relative to put it at the bottom of the page.
+    position: relative;
+}
+
+.anchor {
+    position: relative;
+}

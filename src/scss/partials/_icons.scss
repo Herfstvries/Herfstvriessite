@@ -1,0 +1,73 @@
+.icons {
+    background-color: $white;
+    color: $black;
+    padding-bottom: $large-margin;
+
+    .container {
+        h2 {
+            @include text-condensed(color=$black);
+            margin: $large-margin 0 $medium-margin 0;
+            font-size: 3rem;
+
+            @media only screen and (max-width: 550px) {
+                font-size: 2.2rem;
+            }
+        }
+
+        .row {
+            .col-lg-4 {
+                .service {
+                    padding: 3rem;
+                    margin: 2rem;
+                    align-items: center;
+
+                    &__flex-container {
+                        display: flex;
+                        flex-direction: row;
+                        flex-wrap: nowrap;
+                        justify-content: center;
+                        align-items: flex-end;
+                    }
+
+                    &__icon {
+                        flex: 0 0 6rem;
+                        height: 6rem;
+                        margin-right: 1.5rem;
+
+                        &--events {
+                            transform: translateY(-4px);
+                        }
+
+                        &--xr {
+                            transform: translateY(6px);
+                        }
+
+                        &--attractions {
+                            transform: translateY(-4px);
+                        }
+
+                        &--games {
+                            transform: translateY(4px);
+                        }
+
+                        &--camera {
+                            transform: translateY(5px);
+                        }
+                    }                        
+
+                    &__title {
+                        @include no-gutters;
+                        width: min-content;
+                        font-size: 2.4rem;
+                    }
+
+                    &__text {
+                        @include no-gutters;
+                        margin-top: 1.5rem;
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+        }
+    }
+}

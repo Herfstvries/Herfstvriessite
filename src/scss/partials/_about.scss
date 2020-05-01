@@ -1,0 +1,47 @@
+.about {
+    background-color: $white;
+    color: $black;
+    padding-bottom: $large-margin;
+
+    .container {
+        .text {
+            width: 700px;
+            margin: 0 auto;
+
+            @media only screen and (max-width: 800px) {
+                width: 100%;
+            }
+
+            h2 {
+                @include text-condensed(color=$black);
+                margin: $large-margin 0 $medium-margin 0;
+                font-size: 3rem;
+
+                @media only screen and (max-width: 550px) {
+                    font-size: 2.2rem;
+                }
+            }
+
+            p {
+                font-size: 2.2rem;
+                text-align: justify;
+                text-align-last: center;
+
+                &:last-of-type {
+                    margin-top: $small-margin;
+                    margin-bottom: 0;
+                }
+
+                @media only screen and (max-width: 550px) {
+                    font-size: 1.8rem;
+                }
+            }
+
+            h4 {
+                font-weight: bold;
+                font-size: 2.2rem;
+                margin-top: $medium-margin;
+            }
+        }
+    }
+}

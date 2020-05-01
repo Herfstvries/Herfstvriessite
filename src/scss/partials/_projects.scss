@@ -1,0 +1,105 @@
+.projects {
+    min-height: 30vh;
+    width: 100%;
+    padding-bottom: $default-margin;
+    background-color: $light-grey;
+    color: $black;
+
+    .container {
+        margin-bottom: $medium-margin;
+
+        .row {
+            @include no-gutters;
+            width: 100%;
+
+            .col-lg-4.col-12 {
+                @include no-gutters;
+                padding: 0 1.25rem;
+
+                @media only screen and (max-width: 991px) {
+                    padding: 1.5rem 0;
+                }
+
+                .project-card {
+                    display: block;
+                    min-height: fit-content;
+                    height: 100%;
+                    background-color: $white;
+                    width: 100%;
+                    border: 1px rgba($white, 0.02) solid;
+                    box-shadow: 0.5rem 0.5rem 2rem rgba($black, 0.2);
+
+                    &:hover {
+                        text-decoration: none;
+                    }
+
+                    &__content {
+                        @include no-gutters;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: space-between;
+                        background-color: $white;
+                        height: calc(100% - 22rem);
+                        color: $black;
+                        padding: $small-margin;
+                        text-align: center;
+
+                        h3 {
+                            @include text-condensed($color: $black);
+                            margin-bottom: $small-margin;
+                            z-index: 3;
+                        }
+                    }
+
+                    &__link {
+                        @include no-gutters;
+                        background-color: $white;
+                        color: $black;
+                        border-bottom: 1px rgba($white, 0.02) solid;
+                        border-top: none;
+                        margin-top: 2rem;
+
+                        p {
+                            @include no-gutters;
+                            color: $black;
+                            font-size: 2.2rem;
+                            display: inline-block;
+                            border-bottom: 1px currentColor solid;
+                        }
+                    }
+
+                    .image-wrapper {
+                        width: 100%;
+                        height: 22rem;
+                        position: relative;
+                        transition: all 0.2s;
+                        border-bottom: 1px rgba($white, 0.01) solid;
+
+                        .project {
+                            @include full-absolute;
+                            @include no-gutters;
+                            z-index: 1;
+                        }
+
+                        .overlay {
+                            @include full-absolute;
+                            background-color: #000;
+                            opacity: 0.2;
+                            margin: 0;
+                            z-index: 2;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    h2 {
+        margin: $large-margin 0 $default-margin 0;
+        display: inline-block;
+        font-size: $small-margin;
+        font-size: $small-margin;
+        color: $black;
+        text-transform: uppercase;
+    }
+}
